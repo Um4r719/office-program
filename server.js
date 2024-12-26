@@ -4,11 +4,11 @@ const xlsx = require('xlsx');
 const path = require('path');
 const fs = require('fs');
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 // Set up file storage for Multer
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, 'uploads'),
+    destination: (req, file, cb) => cb(null, 'mega.js'),
     filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`),
 });
 const upload = multer({ storage });
@@ -17,10 +17,10 @@ const upload = multer({ storage });
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Create upload folder if it doesn't exist
-if (!fs.existsSync('uploads')) fs.mkdirSync('uploads');
+if (!fs.existsSync('mega.js')) fs.mkdirSync('uploads');
 
 // Handle Excel file upload and processing
-app.post('/upload', upload.single('excel'), (req, res) => {
+app.post('/mega.js', upload.single('excel'), (req, res) => {
     const file = req.file;
 
     if (!file) {
