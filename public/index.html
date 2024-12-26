@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMAR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VIEW EXCEL FILE</h1>
+        <form id="uploadForm">
+            <input type="file" id="excelFile" name="excel" accept=".xlsx, .xls">
+            <button type="button" id="uploadButton">VIEW</button>
+        </form>
 
+        <div id="sheetSelector" style="display: none;">
+            <label for="sheetSelect">Select Sheet:</label>
+            <select id="sheetSelect"></select>
+        </div>
+
+        <table id="dataTable" class="display">
+            <thead>
+                <tr id="tableHeaders"></tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
